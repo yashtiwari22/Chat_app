@@ -17,13 +17,13 @@ const Chat=({location})=> {
     const [message,setMessage]=useState('');
     const [messages,setMessages]=useState([]);
 
-    const ENDPOINT='localhost:5000';
+    const ENDPOINT='https://chat-appyash.herokuapp.com';
     useEffect(()=>{
         const {name,room}=queryString.parse(location.search);
 
         socket= io(ENDPOINT, {  
             cors: {
-            origin: "http://localhost:5000",
+            origin: "https://chat-appyash.herokuapp.com",
             credentials: true
           }, transports : ['websocket'] });
 

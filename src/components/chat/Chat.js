@@ -16,14 +16,14 @@ const Chat = ({ location }) => {
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
 
-  const ENDPOINT = "localhost:5000";
+  const ENDPOINT = "https://chat-app-backend-4q2i.onrender.com/";
   useEffect(() => {
     const { name, room } = queryString.parse(location.search);
     console.log(name);
     console.log(room);
     socket = io(ENDPOINT, {
       cors: {
-        origin: "https://chat-appyash.herokuapp.com",
+        origin: "https://chat-app-backend-4q2i.onrender.com/",
         credentials: true,
       },
       transports: ["websocket"],
